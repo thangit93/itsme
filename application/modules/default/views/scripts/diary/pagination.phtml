@@ -1,0 +1,23 @@
+<?php if ($this->pageCount > 1): ?>
+<div class="pagination">
+    <div class="row"> 
+        <div class="col-md-12">
+            <ul>
+                <?php if (isset($this->previous)){ ?>
+                <li><a href="<?=$this->baseUrl();?>/diary/list/page/<?=$this->previous?>">&laquo;</a></li>
+                <?php } ?>
+                <?php foreach ($this->pagesInRange as $page)
+                {
+	           ?>
+                <li><a href="<?=$this->baseUrl();?>/diary/list/page/<?=$page?>"><?=$page?></a></li>
+                <?php
+            	}
+                ?>
+               <?php if (isset($this->next)){ ?>
+                    <li><a href="<?=$this->baseUrl();?>/diary/list/page/<?=$this->next?>">&raquo;</a></li>
+                <?php } ?>
+            </ul>
+        </div>
+    </div>
+</div>
+<?php endif; ?>

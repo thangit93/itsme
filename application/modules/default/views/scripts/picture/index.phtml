@@ -1,0 +1,81 @@
+<div id="latest-blog">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="heading-section">
+                    <h2>Ảnh của tui</h2>
+                    <img src="<?=$this->baseUrl();?>/public/images/under-heading.png" alt="" >
+                </div>
+            </div>
+        </div>
+        <div class="row">
+        <?php foreach ($this->picture as $picture)
+        {?>
+            <div class="col-md-4 col-sm-6">
+                <div class="blog-post">
+                    <div class="blog-thumb">
+                        <img src="<?=$this->baseUrl();?>/public/images/pictures/<?=$picture->picture_img;?>" width = "370px" height = "350px" alt="" />
+                    </div>
+                    <div class="blog-content">
+                        <div class="content-show">
+                            <h4><a href=""><?=$picture->picture_name;?></a></h4>
+                            <span><?=$picture->picture_date;?></span>
+                        </div>
+                        <div class="content-hide">
+                            <p><?=$picture->picture_content;?></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php 
+        }?>
+        </div>
+        <!-- PAGINATOR -->
+            <?php echo $this->paginationControl($this->picture, 'Sliding', 'picture/pagination.phtml');?>
+         <!-- END PAGINATOR -->
+    </div>
+</div>
+
+<div id="our-team">
+    <div class="container">
+    <?php if($this->isLogin){ ?>
+        <?php if($this->check)
+                {?>
+        <div class="row">
+            <div class="col-sx-12 col-md-12">
+                <div class="heading-section">
+                    <h2>Đăng ảnh thôi nào!</h2>
+                    <img src="<?=$this->baseUrl();?>/public/images/under-heading.png" alt="" >
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sx-12 col-md-8 col-md-offset-3"> 
+                <div class="message-form">
+                    <form method="post" class="send-message" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="name col-md-4">
+                                <input type="text" name="form[title]" id="form[title]" placeholder="Tiêu đề ảnh" />
+                            </div>
+                            <div class="email col-md-4">
+                                <input type="file" name="form[img]" id="form[img]" />
+                            </div>
+                        </div>
+                        <div style="margin-top: 20px;"></div>    
+                        <div class="row">        
+                            <div class="text col-md-8">
+                                <textarea name="form[content]" class="ckeditor" id="editor1" placeholder="Nội dung bức ảnh"></textarea>
+                            </div>   
+                        </div>                              
+                        <div class="send">
+                            <button type="submit" name="form[send]" id="form[send]">Gửi</button>
+                        </div>
+                    </form>
+                </div>
+           </div>
+        </div>
+        <?php }?>
+    <?php }?>
+        
+    </div>
+</div>

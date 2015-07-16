@@ -1,0 +1,48 @@
+<?php echo $this->layout()->render("header");?>
+
+            <div id="heading">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="heading-content">
+                                <h2><?=$this->controllerName;?></h2>
+                                <span>Home / <a href="<?=$this->baseUrl();?>/<?=$this->controllerName;?>"><?=$this->controllerName;?></a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <?php echo $this->layout()->content;?>
+
+            <footer>
+                <div class="container">
+                    <div class="top-footer">
+                        <div class="row">
+                            
+                            <div class="col-md-3">
+                                <div class="social-bottom">
+                                    <span>Follow me:</span>
+                                    <ul>
+                                        <li><a href="https://www.facebook.com/Ti.Di.Ti.production" class="fa fa-facebook"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bottom-footer">
+                        <p>Make by Trần Đức Thắng</p>
+                    </div>
+                    
+                </div>
+            </footer>
+
+        <script src="<?=$this->baseUrl();?>/public/default/js/vendor/jquery-1.11.0.min.js"></script>
+        <script src="<?=$this->baseUrl();?>/public/default/js/vendor/jquery.gmap3.min.js"></script>
+        <script src="<?=$this->baseUrl();?>/public/default/js/plugins.js"></script>
+        <script src="<?=$this->baseUrl();?>/public/default/js/main.js"></script>
+        <script src="<?=$this->baseUrl();?>/public/ckeditor/ckeditor.js"></script>
+
+    </body>
+</html>

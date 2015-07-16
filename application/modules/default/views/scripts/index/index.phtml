@@ -1,0 +1,98 @@
+<div id="services">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="heading-section">
+                                <h2>Đây là tôi!</h2>
+                                <img src="<?=$this->baseUrl();?>/public/images/under-heading.png" alt="" >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                    <?php foreach ($this->info as $info)
+                    {?>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="service-item">
+                                <div class="icon">
+                                    <i class="fa fa-pencil"></i>
+                                </div>
+                                <h4><?=$info->info_name;?></h4>
+                                <p><?=$info->info_content;?></p>
+                            </div>
+                        </div>
+                    <?php 
+                    }?>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div id="latest-blog">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="heading-section">
+                                <h2>Ảnh của tui</h2>
+                                <img src="<?=$this->baseUrl();?>/public/images/under-heading.png" alt="" >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                    <?php foreach ($this->picture as $picture)
+                    {?>
+                        <div class="col-md-4 col-sm-6">
+                            <div class="blog-post">
+                                <div class="blog-thumb">
+                                    <img src="<?=$this->baseUrl();?>/public/images/pictures/<?=$picture->picture_img;?>" width = "370px" height = "350px" alt="" />
+                                </div>
+                                <div class="blog-content">
+                                    <div class="content-show">
+                                        <h4><a href=""><?=$picture->picture_name;?></a></h4>
+                                        <span><?=$picture->picture_date;?></span>
+                                    </div>
+                                    <div class="content-hide">
+                                        <p><?=$picture->picture_content;?></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <?php 
+                    }?>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="testimonails">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="heading-section">
+                                <h2>Câu nói yêu thích của tôi</h2>
+                                <img src="<?=$this->baseUrl();?>/public/images/under-heading.png" alt="" >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+                            <div class="testimonails-slider">
+                              <ul class="slides">
+                              <?php foreach ($this->favq as $favq)
+                              {?>
+                                <li>
+                                    <div class="testimonails-content">
+                                        <p><?=$favq->favq_content; ?></p>
+                                        <h6><?=$favq->favq_author; ?></h6>
+                                    </div>
+                                </li>
+                                <?php 
+                              }?>
+                              </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>

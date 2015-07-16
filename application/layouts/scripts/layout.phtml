@@ -1,0 +1,53 @@
+          <?php echo $this->layout()->render("header");?>
+            <div id="slider">
+                <div class="flexslider">
+                  <ul class="slides">
+                  <?php foreach ($this->slide as $slide)
+                  {?>
+                    <li>
+                        <div class="slider-caption">
+                            <h1><?=$slide->slide_name;?></h1>
+
+                        </div>
+                      <img src="<?=$this->baseUrl();?>/public/images/slides/<?=$slide->slide_img;?>" width = "1400px" height = "600px" alt="" />
+                    </li>
+                    <?php 
+                  }?>
+                  </ul>
+                </div>
+            </div>
+
+            <?php echo $this->layout()->content;?>
+
+			<footer>
+                <div class="container">
+                    <div class="top-footer">
+                        <div class="row">
+                            
+                            <div class="col-md-3">
+                                <div class="social-bottom">
+                                    <span>Follow me:</span>
+                                    <ul>
+                                        <li><a href="https://www.facebook.com/Ti.Di.Ti.production" class="fa fa-facebook"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bottom-footer">
+                        <p>Make by Trần Đức Thắng</p>
+                    </div>
+                    
+                </div>
+            </footer>
+
+    
+        <script src="<?=$this->baseUrl();?>/public/default/js/vendor/jquery-1.11.0.min.js"></script>
+        <script src="<?=$this->baseUrl();?>/public/default/js/vendor/jquery.gmap3.min.js"></script>
+        <script src="<?=$this->baseUrl();?>/public/default/js/bootstrap.js"></script>
+        <script src="<?=$this->baseUrl();?>/public/default/js/plugins.js"></script>
+        <script src="<?=$this->baseUrl();?>/public/default/js/main.js"></script>
+         
+    </body>
+</html>

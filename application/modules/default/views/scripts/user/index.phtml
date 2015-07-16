@@ -1,0 +1,95 @@
+<div id="product-post">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="heading-section">
+                    <h2>Trang cá nhân</h2>
+                    <img src="<?=$this->baseUrl();?>/public/images/under-heading.png" alt="" >
+                </div>
+            </div>
+        </div>
+        <div id="contact-us">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 well">
+                        <div class="row">
+                            <div class="col-md-6">  
+                                <div class="img-thumbnail">
+                                    <img src="<?=$this->baseUrl();?>/public/images/users/<?=$this->userInfo['user_img'];?>" class="img-responsive">
+                                        <h4 class="text-center"><?=$this->userInfo['other_name'];?></h4>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <table class="table table-condensed">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="2"><h3>Thông tin cá nhân</h3></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="profile">
+                                            <td><strong>Tên</strong></td>
+                                            <td><?=$this->userInfo['other_name'];?></td>
+                                        </tr>
+                                        <tr class="profile">
+                                            <td><strong>Ngày sinh</strong></td>
+                                            <td><?=$this->userInfo['birthday'];?></td>
+                                        </tr>
+                                        <tr class="profile">
+                                            <td><strong>Quyền hạn</strong></td>
+                                            <td><?=$this->userInfo['role_name'];?></td>
+                                        </tr>
+                                        <tr class="profile">
+                                            <td><strong>Giới thiệu</strong></td>
+                                            <td>
+                                                <?=$this->userInfo['user_des'];?>
+                                            </td>
+                                        </tr>                                                    
+                                    </tbody>
+                                </table>
+                            </div>     
+                        </div>  
+                    </div>
+                </div>
+                <?php if($this->check)
+                {?>
+                <div class="row well">
+                    <div class="col-md-4">
+                            <div class="footer-widget">
+                                <h2>Quản lý tài khoản</h2>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="#">Đổi mật khẩu</a></li>
+                                    <li><a href="#">Đổi thông tin cá nhân</a></li>
+                                    <li><a href="#">Quản lý nhật ký</a></li>
+                                    <li><a href="#">Quản lý ảnh</a></li>
+                                    <li><a href="#">Thiết lập riêng tư</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="footer-widget">
+                                <h2>Quản lý giao diện</h2>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="#">Hiển thị silde</a></li>
+                                    <li><a href="#">Hiện thị giới thiệu</a></li>
+                                    <li><a href="#">Hiển thị ảnh</a></li>
+                                    <li><a href="#">Hiển thị châm ngôn</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="footer-widget">
+                                <h2>Thông kê</h2>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="#">Thời điểm đăng nhập</a></li>
+                                    <li><a href="#">Liên hệ</a></li>
+                                    <li><a href="#">Danh sách bạn bè</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                </div>
+                <?php }?>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+ <div class="container">
+    <div class="row">
+        <div class="col-sx-12 col-md-12">
+            <div id="product-post">
+                <div class="heading-section">
+                    <h2>Đăng nhập</h2>
+                    <img src="<?=$this->baseUrl();?>/public/images/under-heading.png" alt="" >
+                </div>
+            </div>
+        </div>
+        <div id="col-sx-12 col-md-12 ">
+            <div class="row">
+                <div class="col-sx-12 col-md-8 col-md-offset-4">
+                    <div id="contact-us">
+                        <div class="">
+                            <form method="post" class="send-message">
+                            <?php 
+                                if(isset($this->message))
+                                {
+                                    echo "<h4 style='color: #FF0000'><i>".$this->message."</i></h4>";
+                                }
+                            ?>
+                                <div class="row">                                                    
+                                    <div class="name col-sx-12 col-md-6">
+                                    <label>Tài khoản</label>
+                                        <input type="text" name="form[username]" id="form[username]" placeholder="Tài khoản" />
+                                    </div>   
+                                </div>
+                                <div class="row">                                                    
+                                    <div class="name col-sx-12 col-md-6">
+                                    <label>Mật khẩu</label>
+                                        <input type="password" name="form[password]" id="form[password]" placeholder="Mật khẩu" />
+                                    </div>   
+                                </div>                                                                                                                 
+                                <div class="send">
+                                    <button type="submit">Đăng nhập</button>
+                                </div>
+                            </form>
+                            <p><i>Hiện tại trang web không cho phép đăng ký</i></p>
+                        </div>
+                    </div>
+               </div>
+       
+          </div>
+      </div>
+   </div>
+</div>
