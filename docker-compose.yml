@@ -1,0 +1,49 @@
+version: '3.6'
+services:
+  nginx:
+    build:
+      dockerfile: ./docker/nginx/Dockerfile
+      context: .
+    volumes:
+      - .:/app
+    ports:
+      - ${NGINX_HOST_PORT:-80}:80
+    networks:
+      - itsme-network
+  app:
+    build:
+      dockerfile: ./docker/app/Dockerfile
+      context: .
+      args:
+        DOCKER_UID: ${DOCKER_UID:-0}
+        DOCKER_GID: ${DOCKER_GID:-0}
+    environment:
+      APPLICATION_ENV: ${DB_DATAAPPLICATION_ENVBASE:-development}
+    restart: always
+    tty: true
+    stdin_open: true
+    command: sh /docker-entrypoint.sh
+    volumes:
+      - .:/app
+      - ./docker/app/php.ini-development:/usr/local/etc/php/php.ini
+    networks:
+      - itsme-network
+  mysql:
+    image: mysql:5.7.43
+    restart: always
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE:-itsme}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-root}
+    volumes:
+      - mysql-vol:/var/lib/mysql
+    ports:
+      - ${MYSQL_HOST_PORT:-3306}:3306
+    networks:
+      - itsme-network
+networks:
+  itsme-network:
+    driver: bridge
+
+volumes:
+  mysql-vol:
+    driver: local
